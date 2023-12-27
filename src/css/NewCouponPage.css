@@ -1,0 +1,11 @@
+.centered-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%; /* 左右 margin 為 50px */
+}
+  
+.ant-form {
+    max-width: 600px; /* 增加表單最大寬度為 600px */
+    width: 100%; /* 設定寬度為 100% */
+}

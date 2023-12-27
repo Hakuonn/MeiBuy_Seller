@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useThemeMode } from 'antd-style';
+import Home from './pages/Home'
+import SignInPage from './pages/SignInPage'
+
 
 function App() {
+  const { setThemeMode } = useThemeMode('auto');
+  useEffect(() => {
+    const storedThemeMode = localStorage.getItem('themeMode');
+    if (storedThemeMode) {
+      setThemeMode(storedThemeMode);
+    }
+  }, [setThemeMode]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>} exact />
+        <Route path='/store/sign-in' element={<SignInPage/>} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
