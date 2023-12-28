@@ -92,10 +92,10 @@ function Basic() {
                 <Form.Item name='website' label="Website">
                     <Input />
                 </Form.Item>
-                <Form.Item name='website' label={<InstagramIcon fontSize='large'/>}>
+                <Form.Item name='website' label={<InstagramIcon fontSize='large' htmlColor='red'/>}>
                     <Input />
                 </Form.Item>
-                <Form.Item name='website' label={<FacebookRoundedIcon fontSize='large'/>}>
+                <Form.Item name='website' label={<FacebookRoundedIcon fontSize='large' htmlColor='#1877f2'/>}>
                     <Input />
                 </Form.Item>
                 <Form.Item name='intro' label="商家簡介">
@@ -115,6 +115,7 @@ function Basic() {
         </Col>
         <Col xs={24} sm={24} md={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
             <div className='upload_img'>
+                {/* 圖片部分還要再研究 */}
                 <Upload
                     name="upload_img"
                     listType="picture-card"

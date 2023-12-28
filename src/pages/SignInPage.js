@@ -44,7 +44,7 @@ function SignInPage() {
                             },
                             ]}
                         >
-                            <Input
+                            <Input.Password
                             prefix={<LockOutlined className="site-form-item-icon" />}
                             type="password"
                             placeholder="Password"
@@ -64,7 +64,7 @@ function SignInPage() {
                                 登入
                             </Button>
                             <br />
-                            <a href="">立即註冊!</a>
+                            <a href="/store/register">立即註冊!</a>
                         </Form.Item>
                         </Form>                    
                     </Col>
