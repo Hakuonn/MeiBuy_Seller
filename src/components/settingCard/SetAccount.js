@@ -4,6 +4,11 @@ import EditModal from './EditModal';
 import SetAccountItem from './SetAccountItem';
 
 
+/**
+ * 帳戶設定專區
+ * 密碼重設、手機認證、e-mail變更、統一編號
+ * @returns 
+ */
 export default function SetAccount() {
 
   return (

@@ -27,6 +27,7 @@ import CustomerSatisfactionPage from './customerSatisfaction/CustomerSatisfactio
 import PendingPage from './order/PendingPage';
 import GoodsOverviewPage from './goods/GoodsOverViewPage';
 import logo from '../imgs/logo.png'
+import AddGoodsPage from './goods/AddGoodsPage';
 
 const { Text, Link } = Typography;
 
@@ -45,14 +46,14 @@ const items = [
   getItem('產品管理', 'sub1', <CategoryIcon/>, [
     getItem('產品總覽', '2'),
     getItem('新增產品', '3'),
-    getItem('違規產品', '4'),
+    getItem('違規產品(這有需要嗎？)', '4'),
   ]),
   getItem('訂單管理', 'sub2', <ListIcon/>, [
     getItem('待處理訂單', '5'),
     getItem('運送中訂單(廢棄)', '6'),
     getItem('待取貨訂單', '7'),
     getItem('訂單取消', '8'),
-    getItem('退貨訂單', '9'),
+    getItem('退貨訂單(這不需要了吧？)', '9'),
   ]),
   getItem('優惠卷', 'sub3', <DiscountIcon/>, [
     getItem('優惠卷管理','10'),
@@ -65,6 +66,11 @@ const items = [
   getItem('設定', '99', <SettingOutlined/>),
   getItem('幫助', '100', <QuestionCircleOutlined />),
 ];
+
+/**
+ * 此網站的所有佈局都從這裡開始，包括左邊的Sider，上方的Header，以及跳轉後所呈現的content都在這管理
+ * @returns 
+ */
 const Home = () => {
   const [collapsed, setCollapsed] = useState(false); //side-nav收合
   const [selectedNav, setSelectedNav] = useState('1'); //頁籤
@@ -135,6 +141,7 @@ const Home = () => {
         >
           {selectedNav === '1' && <IndexPage/>}
           {selectedNav === '2' && <GoodsOverviewPage/>}
+          {selectedNav === '3' && <AddGoodsPage/> }
           {selectedNav === '5' && <PendingPage/>}
           {selectedNav === '10' && <CouponManagePage/>}
           {selectedNav === '11' && <NewCouponPage/>}

@@ -42,6 +42,11 @@ if (!isLt2M) {
 return isJpgOrPng && isLt2M;
 };
 
+
+/**
+ * 商店佈置頁面
+ * @returns 
+ */
 function Basic() {
     // upload img
     const [loading, setLoading] = useState(false);
